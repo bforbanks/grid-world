@@ -98,7 +98,7 @@ for i in range(200):
             # set the tile_actions q-score in the direction to the sum of:
             #   - the reward we got
             #   - the gamma-adjusted max q-score of the tile we arrived at
-            tile_actions[best_action] = reward + 0.4 * max(q_table[(x, y, has_key)])
+            tile_actions[best_action] = reward + 0.18 * max(q_table[(x, y, has_key)])
             q_table[(old_x, old_y, old_has_key)] = tile_actions
 
             # count the consecetive wins we have, and if 10, break the loop for this observation

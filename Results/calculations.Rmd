@@ -13,22 +13,22 @@ Load the pre data:
 
 ```{r warning=FALSE}
 library(readxl)
-preData <- read_excel("C:/Users/Benja/OneDrive/DTU/Introduction to Intelligent Systems/Reinformsccement learning/GridWorld/Results/data.xlsx",
+preData <- read_excel("C:/Users/Benja/dev/grid-world/Results/data.xlsx",
     sheet = "Initial", col_types = "numeric")
 ```
 
 The means of them:
 
 ```{r}
-mean(preData$lambda_0.8)
-mean(preData$lambda_0.9)
+mean(preData$gamma_0.8)
+mean(preData$gamma_0.9)
 ```
 
 And the standard deviation
 
 ```{r}
-sd(preData$lambda_0.8)
-sd(preData$lambda_0.9)
+sd(preData$gamma_0.8)
+sd(preData$gamma_0.9)
 ```
 
 We will use the above information in a power analysis, to calcualte how many observations our final experiment requires.
@@ -45,7 +45,7 @@ Load the final data:
 
 ```{r warning=FALSE}
 library(readxl)
-finalData <- read_excel("C:/Users/Benja/OneDrive/DTU/Introduction to Intelligent Systems/Reinformsccement learning/GridWorld/Results/data.xlsx",
+finalData <- read_excel("C:/Users/Benja/dev/grid-world/Results/data.xlsx",
     sheet = "Final", col_types = "numeric")
 ```
 
@@ -53,10 +53,4 @@ Find the mean:
 
 ```{r}
 colMeans(finalData)
-```
-
-T-test with initial_k_means_iterations = 1 and initial_k_means_iterations = 2
-
-```{r}
-t.test(finalData$gamma_0.7, finalData$gamma_0.9)
 ```
